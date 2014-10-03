@@ -1,12 +1,12 @@
 from django.db import models
-from django.utils.translation import ugettext as _
+#from django.utils.translation import ugettext as _
 
 from . import Icon
 from forms import IconFormField
 
 class IconField(models.Field):
 
-    description = _('A fontawesome icon field')
+    description = 'A fontawesome icon field'
     __metaclass__ = models.SubfieldBase
 
     def __init__(self, *args, **kwargs):
@@ -31,7 +31,7 @@ class IconField(models.Field):
 
     def formfield(self, **kwargs):
         defaults = {
-            'form_class':IconFormField,
+            'form_class': IconFormField,
             #'choices_form_class':IconFormField
         }
 

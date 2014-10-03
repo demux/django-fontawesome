@@ -9,8 +9,8 @@ class IconFormField(forms.Field):
     def __init__(self, *args, **kwargs):
         self.widget = IconWidget
 
-        if 'initial' in kwargs:
-           kwargs['initial'] = Icon(*kwargs['initial'])
+        #if 'initial' in kwargs:
+        #   kwargs['initial'] = Icon(*kwargs['initial'])
 
         super(IconFormField, self).__init__(**kwargs)
 
@@ -22,5 +22,5 @@ class IconFormField(forms.Field):
 
         return {
             'class': ' '.join(classes),
-            'data-fontawesome-prefix':fontawesome_prefix
+            'data-fontawesome-prefix': fontawesome_prefix
         }
